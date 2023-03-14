@@ -1,4 +1,5 @@
-import SignInPage from 'e2e/pages/Signin/Signin.page';
+import SignInPage from 'e2e/pages/Signin/SignIn.page';
+
 import Assert from 'e2e/assertions';
 import Action from 'e2e/actions';
 
@@ -11,7 +12,6 @@ describe('SignIn screen', () => {
     await Assert.isVisible(SignInPage.usernameInput);
     await Assert.isVisible(SignInPage.passwordLabel);
     await Assert.isVisible(SignInPage.passwordInput);
-
-    await Assert.isVisible(SignInPage.signinBtn);
+    await Assert.isVisible(SignInPage.signInButton);
   });
 });
