@@ -6,23 +6,25 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import testIds from 'src/test-ids';
 import {signin as strings} from 'src/locales';
-
-import {View, Text, TextInput, Button} from './src/components/common';
+import {View, Text, InputWithLabel, Button} from 'src/components/common';
+import routes from 'src/routes';
 
 export function HomeScreen() {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
 
   return (
-    <View>
-      <Text testID={testIds.page.signin.usernameLabel}>{strings.username}</Text>
-      <TextInput
+    <>
+      <InputWithLabel
+        label={strings.username}
+        labelTestID={testIds.page.signin.usernameLabel}
         testID={testIds.page.signin.usernameInput}
         value={username}
         onChangeText={setUsername}
       />
-      <Text testID={testIds.page.signin.passwordLabel}>{strings.password}</Text>
-      <TextInput
+      <InputWithLabel
+        label={strings.password}
+        labelTestID={testIds.page.signin.passwordLabel}
         testID={testIds.page.signin.passwordInput}
         value={password}
         onChangeText={setPassword}
@@ -33,7 +35,7 @@ export function HomeScreen() {
         title={strings.submit}
         accessibilityLabel={strings.submit}
       />
-    </View>
+    </>
   );
 }
 
@@ -50,9 +52,9 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Navigator initialRouteName={routes.Home}>
+        <Stack.Screen name={routes.Home} component={HomeScreen} />
+        <Stack.Screen name={routes.Details} component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
