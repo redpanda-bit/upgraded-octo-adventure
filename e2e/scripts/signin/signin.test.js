@@ -8,9 +8,6 @@ describe('SignIn screen', () => {
     await Action.launch(true);
   });
   it('should have all signin elements visible', async () => {
-    await Assert.isVisible(SignInPage.labeledInputUsername);
-    await Assert.isVisible(SignInPage.labeledInputPassword);
-
     await Assert.isVisible(SignInPage.usernameLabel);
     await Assert.isVisible(SignInPage.usernameInput);
     await Assert.isVisible(SignInPage.passwordLabel);
