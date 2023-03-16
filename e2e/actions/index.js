@@ -23,7 +23,10 @@ export const waitForVisible = async (matcher, timeout = 5000) => {
   }
 };
 
+const tap = async matcher => element(matcher).tap();
+
 export default {
   launch,
   waitForVisible,
+  tap,
 };
