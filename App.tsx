@@ -5,8 +5,9 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {useGoogleSignIn} from 'src/hooks/googleSignIn';
-import {GoogleSigninButton} from 'src/components/common/GoogleSignInBtn';
+import {useGoogleSignIn} from './src/hooks/googleSignin';
+import {GoogleSigninButton} from './src/components/common/GoogleSignInBtn';
+import testIds from './src/test-ids';
 
 export function HomeScreen() {
   const {userInfo, googleSignIn, googleSignOut, isSigninInProgress} =
@@ -16,11 +17,14 @@ export function HomeScreen() {
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
       {userInfo.userInfo ? (
-        <TouchableOpacity onPress={googleSignOut}>
+        <TouchableOpacity
+          testID={testIds.page.signin.googleSignOutButton}
+          onPress={googleSignOut}>
           <Text>Google sign out</Text>
         </TouchableOpacity>
       ) : (
         <GoogleSigninButton
+          testID={testIds.page.signin.googleSignInButton}
           style={{width: 192, height: 48}}
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}
