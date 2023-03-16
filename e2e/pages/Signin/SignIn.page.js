@@ -1,12 +1,6 @@
 import testIDs from 'src/test-ids';
 
 class SignInPage {
-  get labeledInputUsername() {
-    return by.id(testIDs.page.signin.labeledInputUsername);
-  }
-  get labeledInputPassword() {
-    return by.id(testIDs.page.signin.labeledInputPassword);
-  }
   get usernameLabel() {
     return by.id(testIDs.page.signin.usernameLabel);
   }
