@@ -5,13 +5,14 @@ import {TextInput} from './TextInput';
 
 type InputWithLabelProps = TextInputProps & {
   label: string;
+  labelTestID?: string;
 };
 
 export const InputWithLabel = (props: InputWithLabelProps): JSX.Element => {
-  const {label, ...inputProps} = props;
+  const {label, labelTestID, ...inputProps} = props;
   return (
     <>
-      <Text>{label}</Text>
+      <Text testID={labelTestID}>{label}</Text>
       <TextInput {...inputProps} />
     </>
   );
