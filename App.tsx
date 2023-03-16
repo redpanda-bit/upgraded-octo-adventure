@@ -1,14 +1,33 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+import {useGoogleSignIn} from 'src/hooks/googleSignIn';
+import {GoogleSigninButton} from 'src/components/common/GoogleSignInBtn';
+
 export function HomeScreen() {
+  const {userInfo, googleSignIn, googleSignOut, isSigninInProgress} =
+    useGoogleSignIn();
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
+      {userInfo.userInfo ? (
+        <TouchableOpacity onPress={googleSignOut}>
+          <Text>Google sign out</Text>
+        </TouchableOpacity>
+      ) : (
+        <GoogleSigninButton
+          style={{width: 192, height: 48}}
+          size={GoogleSigninButton.Size.Wide}
+          color={GoogleSigninButton.Color.Dark}
+          onPress={googleSignIn}
+          disabled={isSigninInProgress}
+        />
+      )}
     </View>
   );
 }
@@ -26,7 +45,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Details">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
