@@ -14,6 +14,7 @@ describe('SignIn screen', () => {
     await Assert.isVisible(SignInPage.passwordInput);
     await Assert.isVisible(SignInPage.signInButton);
     await Assert.isVisible(SignInPage.googleSignInButton);
+    await Assert.isVisible(SignInPage.cameraButton);
   });
 
   it('should sign in with test google account', async () => {

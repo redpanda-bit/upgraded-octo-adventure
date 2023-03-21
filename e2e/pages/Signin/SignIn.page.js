@@ -22,6 +22,9 @@ class SignInPage {
   get googleSignOutButton() {
     return by.id(testIDs.page.signin.googleSignOutButton);
   }
+  get cameraButton() {
+    return by.id(testIDs.page.signin.cameraButton);
+  }
 }
 
 export default new SignInPage();
