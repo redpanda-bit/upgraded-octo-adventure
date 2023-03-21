@@ -16,6 +16,12 @@ class SignInPage {
   get signInButton() {
     return by.id(testIDs.page.signin.signinBtn);
   }
+  get googleSignInButton() {
+    return by.id(testIDs.page.signin.googleSignInButton);
+  }
+  get googleSignOutButton() {
+    return by.id(testIDs.page.signin.googleSignOutButton);
+  }
 }
 
 export default new SignInPage();
