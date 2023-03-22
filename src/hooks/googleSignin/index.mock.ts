@@ -1,10 +1,10 @@
 import React from 'react';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import type {GoogleUserInfoType} from 'src/types';
+import type {UserType} from 'src/types';
 import mocks from 'e2e/mocks';
 
 export const useGoogleSignIn = () => {
-  const [userInfo, setUserInfo] = React.useState<GoogleUserInfoType>({
+  const [userInfo, setUserInfo] = React.useState<UserType>({
     userInfo: null,
   });
   const [isSigninInProgress, setIsSigninInProgress] =
