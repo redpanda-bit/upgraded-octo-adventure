@@ -1,6 +1,9 @@
 import testIDs from 'src/test-ids';
 
 class SignInPage {
+  get signInForm() {
+    return by.id(testIDs.page.signin.signInForm);
+  }
   get usernameLabel() {
     return by.id(testIDs.page.signin.usernameLabel);
   }
