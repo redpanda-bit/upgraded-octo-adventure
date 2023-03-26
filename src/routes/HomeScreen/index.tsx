@@ -4,8 +4,8 @@ import {useGoogleSignIn} from 'src/hooks';
 
 import type {HomeScreenProps} from 'src/types';
 
-import {SignInForm} from './SignInForm';
-import {TempActions} from './TempActions';
+import {SignInForm} from 'src/components/SignIn';
+import {TempActions} from 'src/components/Temp/TempActions';
 
 export function HomeScreen(props: HomeScreenProps) {
   const [username, setUsername] = React.useState('');
