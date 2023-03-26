@@ -4,7 +4,7 @@ import {useGoogleSignIn} from 'src/hooks';
 
 import type {HomeScreenProps} from 'src/types';
 
-import {SignInForm} from 'src/components/SignIn';
+import {SignInForm} from 'src/components/SignIn/SignInForm';
 import {TempActions} from 'src/components/Temp/TempActions';
 
 export function HomeScreen(props: HomeScreenProps) {
