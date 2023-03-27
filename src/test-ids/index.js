@@ -1,6 +1,7 @@
 export default {
   page: {
     signin: {
+      signInForm: 'signin_form',
       usernameLabel: 'username_label',
       usernameInput: 'username_input',
       passwordLabel: 'password_label',

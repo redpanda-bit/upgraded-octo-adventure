@@ -1,4 +1,5 @@
 import SignInPage from 'e2e/pages/Signin/SignIn.page';
+import CameraPage from 'e2e/pages/Signin/Camera.page';
 
 import Assert from 'e2e/assertions';
 import Action from 'e2e/actions';
@@ -6,6 +7,7 @@ import Action from 'e2e/actions';
 describe('Camera screen', () => {
   beforeEach(async () => {
     await Action.launch(true);
+    await Action.tap(SignInPage.googleSignInButton);
     await Action.tap(SignInPage.cameraButton);
   });
 

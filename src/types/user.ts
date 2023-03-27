@@ -1,5 +1,5 @@
-import type {User} from '@react-native-google-signin/google-signin/src/types';
+import type {User as GoogleUser} from '@react-native-google-signin/google-signin/src/types';
 
-export type GoogleUserInfoType = {
-  userInfo: User | null;
+export type UserType = {
+  userInfo: GoogleUser | null;
 };

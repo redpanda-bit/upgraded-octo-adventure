@@ -23,10 +23,19 @@ export const waitForVisible = async (matcher, timeout = 5000) => {
   }
 };
 
+const waitForNotVisible = async (matcher, timeout = 5000) => {
+  try {
+    await waitFor(element(matcher)).toBeNotVisible().withTimeout(timeout);
+  } catch (e) {
+    // prevent errors
+  }
+};
+
 const tap = async matcher => element(matcher).tap();
 
 export default {
   launch,
   waitForVisible,
   tap,
+  waitForNotVisible,
 };
