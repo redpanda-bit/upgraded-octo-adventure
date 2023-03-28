@@ -10,7 +10,7 @@ import {
 import {Photo} from 'src/components/common';
 import {Camera} from 'src/components/Camera';
 import routes from 'src/routes';
-import {RootStackParamList} from 'src/types';
+import type {RootStackParamList} from 'src/types';
 
 type Props = NativeStackScreenProps<RootStackParamList, routes.Camera>;
 
