@@ -8,6 +8,7 @@ module.exports = {
       'module-resolver',
       {
         root: ['./'],
+        extensions: ['.js', '.ts', '.tsx'],
       },
     ],
   ],
