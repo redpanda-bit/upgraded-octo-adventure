@@ -7,15 +7,12 @@ import testIds from 'src/test-ids';
 
 import type {RootStackParamList} from 'src/types';
 
-type TempActionProps = NativeStackScreenProps<
-  RootStackParamList,
-  routes.Home
-> & {
+type Props = NativeStackScreenProps<RootStackParamList, routes.Home> & {
   isSignedIn: boolean;
   googleSignOut: () => void;
 };
 
-export const TempActions = (props: TempActionProps): JSX.Element | null => {
+export const TempActions = (props: Props): JSX.Element | null => {
   return props.isSignedIn ? (
     <>
       <Button

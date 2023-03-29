@@ -3,7 +3,7 @@ import {View, Touchable, Image} from 'src/components/common';
 import {Camera as CameraView} from 'react-native-vision-camera';
 import testIds from 'src/test-ids';
 
-type CameraProps = {
+type Props = {
   device: any;
   photo: string | null;
   shutterSize: number;
@@ -11,8 +11,8 @@ type CameraProps = {
   removePhoto: () => void;
 };
 
-export const Camera = React.forwardRef<CameraView, CameraProps>(
-  (props: CameraProps, ref: React.Ref<CameraView>): JSX.Element => {
+export const Camera = React.forwardRef<CameraView, Props>(
+  (props: Props, ref: React.Ref<CameraView>): JSX.Element => {
     const [isCameraReady, setIsCameraReady] = React.useState<boolean>(false);
     const {device, photo, shutterSize, onTakePhoto, removePhoto} = props;
     return (
