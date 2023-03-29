@@ -1,5 +1,6 @@
 enum routes {
   Home = 'Home',
+  Camera = 'Camera',
   Details = 'Details',
 }
 

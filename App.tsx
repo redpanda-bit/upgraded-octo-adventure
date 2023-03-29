@@ -1,9 +1,13 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  HeaderBackButton,
+  HeaderBackButtonProps,
+} from '@react-navigation/elements';
 import {View, Text} from 'src/components/common';
-import {HomeScreen} from 'src/routes';
-import {routes} from 'src/types';
+import routes, {HomeScreen, CameraScreen} from 'src/routes';
+import testIds from 'src/test-ids';
 
 export function DetailsScreen() {
   return (
@@ -21,6 +25,22 @@ function App() {
       <Stack.Navigator initialRouteName={routes.Home}>
         <Stack.Screen name={routes.Home} component={HomeScreen} />
         <Stack.Screen name={routes.Details} component={DetailsScreen} />
+        <Stack.Screen
+          name={routes.Camera}
+          component={CameraScreen}
+          options={{
+            headerLeft: (props: HeaderBackButtonProps) => {
+              const navigation = useNavigation();
+              return (
+                <HeaderBackButton
+                  {...props}
+                  testID={testIds.page.camera.backButton}
+                  onPress={navigation.goBack}
+                />
+              );
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

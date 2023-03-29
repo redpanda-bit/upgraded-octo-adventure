@@ -1,16 +1,18 @@
 import React from 'react';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {signin as strings} from 'src/locales';
 import {Button, Text, Touchable} from 'src/components/common';
-import {routes, HomeScreenProps} from 'src/types';
+import routes from 'src/routes';
 import testIds from 'src/test-ids';
 
-type TempActionProps = {
+import type {RootStackParamList} from 'src/types';
+
+type Props = NativeStackScreenProps<RootStackParamList, routes.Home> & {
   isSignedIn: boolean;
-  navigation: HomeScreenProps['navigation'];
   googleSignOut: () => void;
 };
 
-export const TempActions = (props: TempActionProps): JSX.Element | null => {
+export const TempActions = (props: Props): JSX.Element | null => {
   return props.isSignedIn ? (
     <>
       <Button
