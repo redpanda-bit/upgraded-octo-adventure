@@ -12,7 +12,7 @@ import testIds from 'src/test-ids';
 export function DetailsScreen() {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Details Screen</Text>
+      <Text>Sampling a repo change before submitting a small PR to the react native repo</Text>
     </View>
   );
 }
