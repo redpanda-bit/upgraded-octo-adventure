@@ -37,6 +37,9 @@ export const SignInForm = (props: SignInFormProps): JSX.Element | null => {
   return (
     <View testID={testIds.page.signin.signInForm}>
       <InputWithLabel
+        autoCorrect={false}
+        autoComplete={strings.username}
+        spellCheck={false}
         label={strings.username}
         labelTestID={testIds.page.signin.usernameLabel}
         testID={testIds.page.signin.usernameInput}
@@ -44,6 +47,7 @@ export const SignInForm = (props: SignInFormProps): JSX.Element | null => {
         onChangeText={setUsername}
       />
       <InputWithLabel
+        secureTextEntry={true}
         label={strings.password}
         labelTestID={testIds.page.signin.passwordLabel}
         testID={testIds.page.signin.passwordInput}
