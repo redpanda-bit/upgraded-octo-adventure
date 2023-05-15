@@ -11,6 +11,8 @@ import {
   Touchable,
 } from 'src/components/common';
 
+import Styles from './styles';
+
 type SignInFormProps = {
   username: string;
   setUsername: (username: string) => void;
@@ -62,7 +64,7 @@ export const SignInForm = (props: SignInFormProps): JSX.Element | null => {
       />
       <GoogleSigninButton
         testID={testIds.page.signin.googleSignInButton}
-        style={{width: 192, height: 48}}
+        style={Styles.googleBtn}
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Dark}
         onPress={googleSignIn}
