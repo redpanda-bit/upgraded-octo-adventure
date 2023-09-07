@@ -1,6 +1,6 @@
 import React from 'react';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {signin as strings} from 'src/locales';
+import translate from 'src/locales';
 import {Button, Text, Touchable} from 'src/components/common';
 import routes from 'src/routes';
 import testIds from 'src/test-ids';
@@ -20,8 +20,8 @@ export const TempActions = (props: Props): JSX.Element | null => {
         onPress={() => {
           props.navigation.navigate(routes.Camera);
         }}
-        title={strings.camera}
-        accessibilityLabel={strings.camera}
+        title={translate('signin.camera')}
+        accessibilityLabel={translate('signin.camera')}
       />
       <Touchable
         testID={testIds.page.signin.googleSignOutButton}

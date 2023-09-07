@@ -1,14 +1,11 @@
 import React from 'react';
 import testIds from 'src/test-ids';
-import {signin as strings} from 'src/locales';
-
+import translate from 'src/locales';
 import {
   View,
-  Text,
   InputWithLabel,
   Button,
   GoogleSigninButton,
-  Touchable,
 } from 'src/components/common';
 
 type SignInFormProps = {
@@ -38,9 +35,9 @@ export const SignInForm = (props: SignInFormProps): JSX.Element | null => {
     <View testID={testIds.page.signin.signInForm}>
       <InputWithLabel
         autoCorrect={false}
-        autoComplete={strings.username as 'username'}
+        autoComplete={'username'}
         spellCheck={false}
-        label={strings.username}
+        label={translate('signin.username')}
         labelTestID={testIds.page.signin.usernameLabel}
         testID={testIds.page.signin.usernameInput}
         value={username}
@@ -48,7 +45,7 @@ export const SignInForm = (props: SignInFormProps): JSX.Element | null => {
       />
       <InputWithLabel
         secureTextEntry={true}
-        label={strings.password}
+        label={translate('signin.password')}
         labelTestID={testIds.page.signin.passwordLabel}
         testID={testIds.page.signin.passwordInput}
         value={password}
@@ -57,8 +54,8 @@ export const SignInForm = (props: SignInFormProps): JSX.Element | null => {
       <Button
         testID={testIds.page.signin.signinBtn}
         onPress={() => {}}
-        title={strings.submit}
-        accessibilityLabel={strings.submit}
+        title={translate('signin.submit')}
+        accessibilityLabel={translate('signin.submit')}
       />
       <GoogleSigninButton
         testID={testIds.page.signin.googleSignInButton}

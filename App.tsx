@@ -8,6 +8,7 @@ import {
 import {View, Text} from 'src/components/common';
 import routes, {HomeScreen, CameraScreen} from 'src/routes';
 import testIds from 'src/test-ids';
+import translate from 'src/locales';
 
 export function DetailsScreen() {
   return (
@@ -23,12 +24,21 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={routes.Home}>
-        <Stack.Screen name={routes.Home} component={HomeScreen} />
-        <Stack.Screen name={routes.Details} component={DetailsScreen} />
+        <Stack.Screen
+          name={routes.Home}
+          component={HomeScreen}
+          options={{title: translate('common.home')}}
+        />
+        <Stack.Screen
+          name={routes.Details}
+          component={DetailsScreen}
+          options={{title: translate('common.details')}}
+        />
         <Stack.Screen
           name={routes.Camera}
           component={CameraScreen}
           options={{
+            title: translate('common.camera'),
             headerLeft: (props: HeaderBackButtonProps) => {
               const navigation = useNavigation();
               return (
