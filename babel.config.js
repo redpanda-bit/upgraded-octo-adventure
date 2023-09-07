@@ -4,6 +4,7 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
+    ['nativewind/babel'],
     [
       'module-resolver',
       {

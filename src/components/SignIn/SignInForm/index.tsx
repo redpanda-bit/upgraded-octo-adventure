@@ -11,8 +11,6 @@ import {
   Touchable,
 } from 'src/components/common';
 
-import Styles from './styles';
-
 type SignInFormProps = {
   username: string;
   setUsername: (username: string) => void;
@@ -40,7 +38,7 @@ export const SignInForm = (props: SignInFormProps): JSX.Element | null => {
     <View testID={testIds.page.signin.signInForm}>
       <InputWithLabel
         autoCorrect={false}
-        autoComplete={strings.username}
+        autoComplete={strings.username as 'username'}
         spellCheck={false}
         label={strings.username}
         labelTestID={testIds.page.signin.usernameLabel}
@@ -64,7 +62,7 @@ export const SignInForm = (props: SignInFormProps): JSX.Element | null => {
       />
       <GoogleSigninButton
         testID={testIds.page.signin.googleSignInButton}
-        style={Styles.googleBtn}
+        className="w-[192] h-[48]"
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Dark}
         onPress={googleSignIn}
