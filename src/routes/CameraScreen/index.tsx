@@ -7,7 +7,6 @@ import {
   TakePhotoOptions,
   TakeSnapshotOptions,
 } from 'react-native-vision-camera';
-import {Photo} from 'src/components/common';
 import {Camera} from 'src/components/Camera';
 import routes from 'src/routes';
 import type {RootStackParamList} from 'src/types';

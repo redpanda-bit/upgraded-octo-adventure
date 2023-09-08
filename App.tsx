@@ -9,6 +9,7 @@ import {View, Text} from 'src/components/common';
 import routes, {HomeScreen, CameraScreen} from 'src/routes';
 import testIds from 'src/test-ids';
 import translate from 'src/locales';
+import type {RootStackParamList} from 'src/types';
 
 export function DetailsScreen() {
   return (
@@ -18,7 +19,7 @@ export function DetailsScreen() {
   );
 }
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App() {
   return (

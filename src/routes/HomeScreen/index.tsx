@@ -8,15 +8,17 @@ import routes from 'src/routes';
 
 import type {RootStackParamList} from 'src/types';
 
-type Props = {
-  navigation: NativeStackScreenProps<RootStackParamList, routes.Home>;
-};
+type Props = NativeStackScreenProps<RootStackParamList, routes.Home>;
 
 export function HomeScreen(props: Props) {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const {userInfo, googleSignIn, googleSignOut, isSigninInProgress} =
     useGoogleSignIn();
+
+  const navigateToCamera = React.useCallback(() => {
+    props.navigation.navigate(routes.Camera);
+  }, []);
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -31,7 +33,7 @@ export function HomeScreen(props: Props) {
       />
       <TempActions
         isSignedIn={!!userInfo.userInfo}
-        navigation={props.navigation}
+        onCameraPress={navigateToCamera}
         googleSignOut={googleSignOut}
       />
     </View>

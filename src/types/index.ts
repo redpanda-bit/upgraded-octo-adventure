@@ -1,7 +1,7 @@
 import routes from 'src/routes';
 
 export type RootStackParamList = {
-  [key: keyof routes]: undefined;
+  [route in routes]: undefined;
 };
 
 export * from './user';
